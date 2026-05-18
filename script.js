@@ -83,13 +83,43 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ======= CONTACT FORM HANDLING ======= */
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const message = document.getElementById('message').value;
             
-            // Open the default email client with the message pre-filled
-            window.location.href = `mailto:poojandoshi.linkdin@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
+            // IMPORTANT: Replace this URL with your actual Formspree endpoint
+            const formspreeUrl = "https://formspree.io/f/YOUR_FORM_ID"; 
+            
+            if (formspreeUrl.includes("YOUR_FORM_ID")) {
+                alert("Almost there! Please follow the instructions to add your Formspree ID to the code.");
+                return;
+            }
+
+            const formData = new FormData(contactForm);
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin" style="margin-left: 8px;"></i>';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(formspreeUrl, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    alert("Message sent successfully! I will get back to you soon.");
+                    contactForm.reset();
+                } else {
+                    alert("Oops! There was a problem submitting your form. Please try again.");
+                }
+            } catch (error) {
+                alert("Oops! There was a network error. Please try again.");
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
     }
 });
