@@ -1089,6 +1089,43 @@ footer {
         font-size: 1.4rem;
     }
 
+    /* Modern Mobile Contact Section */
+    .contact-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .contact-card {
+        flex: 1 1 140px;
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .contact-card div {
+        align-items: center;
+    }
+    
+    .contact-card i {
+        font-size: 1.5rem;
+    }
+
+    .contact-card h4 {
+        font-size: 1rem;
+    }
+
+    .contact-card p {
+        font-size: 0.8rem;
+        word-break: break-all;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
     .footer-content {
         flex-direction: column;
         gap: 1rem;
