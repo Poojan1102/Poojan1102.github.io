@@ -85,7 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Message sent! (Demo)');
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            
+            // Open the default email client with the message pre-filled
+            window.location.href = `mailto:poojandoshi.linkdin@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
         });
     }
 });
