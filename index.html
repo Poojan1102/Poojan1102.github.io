@@ -25,6 +25,9 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon (Fixes favicon CSP/404 error) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
 </head>
 <body class="loading">
 
@@ -350,7 +353,7 @@
                         </div>
                     </div>
                     
-                    <form class="contact-form glass-card" action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent! (Demo)');">
+                    <form id="contact-form" class="contact-form glass-card" action="#" method="POST">
                         <div class="form-group">
                             <input type="text" id="name" placeholder="Your Name" required>
                         </div>
