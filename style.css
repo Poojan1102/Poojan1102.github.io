@@ -38,6 +38,7 @@
 html {
     scroll-behavior: smooth;
     background-color: var(--bg-primary);
+    overflow-x: hidden;
 }
 
 body {
@@ -1016,18 +1017,27 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .nav-container {
+        padding: 0 1rem;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
         width: 70%;
         height: 100vh;
-        background: rgba(2, 6, 23, 0.95);
+        background: rgba(2, 6, 23, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;
         transition: var(--transition);
         border-left: 1px solid var(--glass-border);
+    }
+
+    .nav-links a:not(.btn-primary-outline) {
+        font-size: 1.2rem;
+        padding: 1rem;
     }
 
     .nav-links.active {
@@ -1037,10 +1047,11 @@ footer {
     .mobile-menu-btn {
         display: block;
         z-index: 1001;
+        font-size: 1.8rem;
     }
 
     .hero {
-        padding-top: 7rem;
+        padding-top: 6rem;
     }
 
     .roles {
@@ -1059,8 +1070,19 @@ footer {
     
     .btn-primary, .btn-secondary {
         width: 100%;
-        max-width: 300px;
+        max-width: 100%;
         text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .social-links a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
     }
 
     .footer-content {
