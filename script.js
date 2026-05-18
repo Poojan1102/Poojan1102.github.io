@@ -87,12 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             // IMPORTANT: Replace this URL with your actual Formspree endpoint
-            const formspreeUrl = "https://formspree.io/f/YOUR_FORM_ID"; 
-            
-            if (formspreeUrl.includes("YOUR_FORM_ID")) {
-                alert("Almost there! Please follow the instructions to add your Formspree ID to the code.");
-                return;
-            }
+            const formspreeUrl = "https://formspree.io/f/mkoenaeq";
 
             const formData = new FormData(contactForm);
             const submitBtn = contactForm.querySelector('button[type="submit"]');
